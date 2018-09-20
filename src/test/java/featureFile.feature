@@ -12,10 +12,10 @@ So that I can have the user and the log in
    
    Examples: Username and Password
     | user | password |
-    | Lucy | Lemon |
-    | Henry | Kiwi |
-    | Cooper | Banana |
-    | Vince | Dragon |
-    | Steve | Strawb |
+    | Bob | password1 |
+    | sam | password1 |
+    | smith | password1 |
+    | jack | password1 |
+    | harry | password1 |
    
   

@@ -33,6 +33,7 @@ public class TestStep
 		driver.get(Constants.URL);
 		ReportUtil.createTest("SomeTest");
 		ReportUtil.logTestWithScreenShot(LogStatus.INFO, "someText", driver);
+		Utils.SetCellAndSaveString("userinfo.xlsx", 0, Utils.increaseRow(), 0, arg1);
 		ReportUtil.EndTest();
 	}
 

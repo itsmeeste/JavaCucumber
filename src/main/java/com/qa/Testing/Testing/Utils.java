@@ -1,7 +1,9 @@
 package com.qa.Testing.Testing;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 
 import org.apache.poi.xssf.usermodel.XSSFCell;
@@ -12,7 +14,7 @@ public class Utils
 {
 	private static XSSFWorkbook workbook = null;
 	private static XSSFSheet sheet;
-	
+	private static int inc =1;
 	private static boolean LoadFile(String filepath)
 	{
 		FileInputStream file = null;
@@ -90,5 +92,25 @@ public class Utils
 		
 		
 	}
+	public static void  SetCellAndSaveString(String filepath,int sheetNum,int row,int cellNum,String value) throws IOException
+	{
+		XSSFCell cell = getCell(filepath,sheetNum,row,cellNum);
+		cell.setCellValue(value);
+		FileOutputStream fos = new FileOutputStream(new File(filepath));
+        workbook.write(fos);
+        fos.close();
+        workbook = null;
+        sheet = null;
+		System.out.println("Current row:" + row);
+	}
+	public static int increaseRow()
+	{
+		return inc++;
+	}
+	public static void ResetInc()
+	{
+		inc = 1;
+	}
+	
 
 }
